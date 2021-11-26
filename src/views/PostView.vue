@@ -4,8 +4,8 @@
       <v-col>
         <article>
           <header class="mb-4">
-            <h1 class="font-weight-bold mb-1 text-sx-h1">{{ currentPost.title.toUpperCase() }}</h1>
-            <div class="grey--text font-italic mb-2">{{ currentPost.user.name }} <span class="mx-2">-</span>
+            <h1 class="font-weight-bold mb-1 text-sx-h1" v-if="currentPost.title">{{ currentPost.title.toUpperCase() }}</h1>
+            <div class="grey--text font-italic mb-2" v-if="currentPost.user">{{ currentPost.user.name }} <span class="mx-2">-</span>
               <v-icon
                   small
                   color="green darken-2"
@@ -22,7 +22,7 @@
                 height="30vh"
             ></v-img>
           </figure>
-          <section class="mb-5 body-post ">
+          <section class="mb-5 body-post " v-if="currentPost.body">
             <p class="  mb-4">{{ currentPost.body.charAt(0).toUpperCase() + currentPost.body.substring(1) }}</p>
           </section>
         </article>
