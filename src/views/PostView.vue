@@ -1,6 +1,6 @@
 <template>
   <v-container class="mt-5 mx-auto" v-if="currentPost">
-    <v-row class="justify-center align-center" v-if="currentPost">
+    <v-row class="justify-center align-center"  >
       <v-col>
         <article>
           <header class="mb-4">
