@@ -1,11 +1,14 @@
 <template>
-  <v-container class="mt-5 mx-auto" v-if="currentPost">
-    <v-row class="justify-center align-center"  >
+  <v-container class="mt-5 mx-auto " v-if="currentPost">
+    <v-row class="justify-center align-center">
       <v-col>
         <article>
           <header class="mb-4">
-            <h1 class="font-weight-bold mb-1 text-sx-h1" v-if="currentPost.title">{{ currentPost.title.toUpperCase() }}</h1>
-            <div class="grey--text font-italic mb-2" v-if="currentPost.user">{{ currentPost.user.name }} <span class="mx-2">-</span>
+            <h1 class="font-weight-bold mb-1 text-sx-h1" v-if="currentPost.title">{{
+                currentPost.title.toUpperCase()
+              }}</h1>
+            <div class="grey--text font-italic mb-2" v-if="currentPost.user">{{ currentPost.user.name }} <span
+                class="mx-2">-</span>
               <v-icon
                   small
                   color="green darken-2"
@@ -19,7 +22,8 @@
             <v-img
                 lazy-src="https://picsum.photos/id/11/10/6"
                 src="https://picsum.photos/id/11/500/300"
-                height="30vh"
+                height="400px"
+
             ></v-img>
           </figure>
           <section class="mb-5 body-post " v-if="currentPost.body">
@@ -28,20 +32,26 @@
         </article>
         <!-- Comments section-->
         <section class="mb-2">
-          <v-row>
-            <v-col cols="12" lg="8" xl="8">
-              <v-card class="custom-card">
-                <v-card-title>Last Comments</v-card-title>
-                <div class="card-body" v-if="currentComments">
-                  <Comment :comment="comment" v-for="(comment, index) in currentComments" :key="index"/>
-                  <div>
-                    <p class="blue--text  align-center see-more" @click="seeMore"
-                       v-if="!((currentComments.length)<this.limit)">read more...</p>
+          <template>
+            <v-row
+                class="mb-6"
+                justify="center"
+                no-gutters
+            >
+              <v-col md="auto">
+                <v-card class="custom-card">
+                  <v-card-title>Last Comments</v-card-title>
+                  <div class="card-body" v-if="currentComments">
+                    <Comment :comment="comment" v-for="(comment, index) in currentComments" :key="index"/>
+                    <div>
+                      <p class="blue--text  align-center see-more" @click="seeMore"
+                         v-if="!((currentComments.length)<this.limit)">read more...</p>
+                    </div>
                   </div>
-                </div>
-              </v-card>
-            </v-col>
-          </v-row>
+                </v-card>
+              </v-col>
+            </v-row>
+          </template>
         </section>
       </v-col>
     </v-row>
