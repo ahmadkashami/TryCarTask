@@ -1,5 +1,8 @@
 <template>
   <v-container>
+   <div>
+     <p class="py-4  title font-weight-bold">New Our Posts</p>
+   </div>
     <v-row>
       <Post :post="post" v-for="(post, index) in posts" :key="index"/>
     </v-row>
@@ -52,3 +55,9 @@ export default {
   },
 }
 </script>
+<style scoped>
+.title{
+  text-align: center;
+  font-size: 2rem !important;
+}
+</style>
