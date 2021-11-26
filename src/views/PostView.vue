@@ -38,10 +38,10 @@
                 justify="center"
                 no-gutters
             >
-              <v-col md="auto">
+              <v-col md="auto" v-if="currentComments && currentPost">
                 <v-card class="custom-card">
                   <v-card-title>Last Comments</v-card-title>
-                  <div class="card-body" v-if="currentComments">
+                  <div class="card-body">
                     <Comment :comment="comment" v-for="(comment, index) in currentComments" :key="index"/>
                     <div>
                       <p class="blue--text  align-center see-more" @click="seeMore"
