@@ -122,7 +122,7 @@ export default {
   font-weight: 400;
   line-height: 30px;
   text-align: start;
-  min-height: 20vh;
+  min-height: 15vh;
 }
 
 .see-more {
