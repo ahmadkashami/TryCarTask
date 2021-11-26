@@ -5,7 +5,7 @@
           <v-col>
             <div class="text-center">
               <p class="reserved pt-4">
-                © TryCare Task 2021. All Rights
+                ©TryCar Task 2021. All Rights
                 Reserved
               </p>
             </div>
