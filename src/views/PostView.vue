@@ -20,10 +20,8 @@
           </header>
           <figure class="mb-4">
             <v-img
-                lazy-src="https://picsum.photos/id/11/10/6"
-                src="https://picsum.photos/id/11/500/300"
-                height="400px"
-
+                :src="'https://picsum.photos/600/300/?image='+currentPost.id"
+                height="500"
             ></v-img>
           </figure>
           <section class="mb-5 body-post " v-if="currentPost.body">
@@ -38,7 +36,7 @@
                 justify="center"
                 no-gutters
             >
-              <v-col md="auto" v-if="currentComments && currentPost">
+              <v-col md="auto" v-if="currentPost">
                 <v-card class="custom-card">
                   <v-card-title>Last Comments</v-card-title>
                   <div class="card-body">
